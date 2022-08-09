@@ -1,13 +1,15 @@
 <h4><strong><%= current_user.username %></strong> is interested in:</h4>
-<h5>Your credits: <%= current_user.credit_left %></h5>
 <br>
 <h1><strong><%= @item.name %></strong></h1>
-<p><%= @item.description %></p>
 <%= image_tag @item.image, width: "500px" %>
+<p><%= @item.description %></p>
 <h1><strong><%= @item.credit %> Credits</strong></h1>
-<p><%= @item.location %></p>
+<h5>Your credits: <%= current_user.credit_left %></h5>
+<br>
+<p>Pickup at:</p>
+<p><strong><%= @item.location %></strong></p>
 <br>
 <%= link_to "Back", items_path, class: "btn btn-dark" %>
-<%= link_to "Edit", "#", class: "btn btn-dark" %>
-<%= link_to "Remove", "#", class: "btn btn-dark" %>
+<%= link_to "Edit", edit_item_path, class: "btn btn-dark" %>
+<%= link_to "Remove", item_path(@item), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-dark" %>
 <%= link_to "Buy", "#", class: "btn btn-dark" %>

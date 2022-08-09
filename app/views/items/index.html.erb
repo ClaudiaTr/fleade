@@ -1,4 +1,5 @@
 <h1>All available items</h1>
+<p><%= link_to "Offer an item", new_item_path, class: "btn btn-dark" %></p>
 <ul>
 <% @items.each do |item| %>
 <li>
@@ -9,7 +10,7 @@
 <% else %>
   <p><em><%="no image available"%></em></p>
 <% end %>
-<p><strong><%= item.credit %></strong></p>
+<p><strong>Credit: <%= item.credit %></strong></p>
 </li>
 <% end %>
 </ul>
