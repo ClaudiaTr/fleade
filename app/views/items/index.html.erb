@@ -2,15 +2,21 @@
 <p><%= link_to "Offer an item", new_item_path, class: "btn btn-dark" %></p>
 <ul>
 <% @items.each do |item| %>
-<li>
-<h2><%= link_to item.name, item_path(item) %></h2>
-<p><%= item.description %></p>
-<% if item.image %>
-  <%= image_tag item.image, height: "200", width: "200"%>
-<% else %>
-  <p><em><%="no image available"%></em></p>
-<% end %>
-<p><strong>Credit: <%= item.credit %></strong></p>
-</li>
+<div class="card">
+  <li>
+    <div class="card-image">
+      <h2><%= link_to item.name, item_path(item) %></h2>
+      <% if item.image %>
+        <%= image_tag item.image, height: "200", width: "200"%>
+      <% else %>
+        <p><em><%="no image available"%></em></p>
+      <% end %>
+    </div>
+    <div class="card-info">
+      <p><%= item.description %></p>
+      <p><strong>Credit: <%= item.credit %></strong></p>
+    </div>
+  </li>
+</div>
 <% end %>
 </ul>
