@@ -1,20 +1,20 @@
 <h1>All available items</h1>
 <p><%= link_to "Offer an item", new_item_path, class: "btn btn-dark" %></p>
-<ul>
+<ul class="cards-all-items">
 <% @items.each do |item| %>
-<div class="card">
   <li>
+  <div class="card">
+    <h3><%= link_to item.name.titleize, item_path(item) %></h3>
     <div class="card-image">
-      <h2><%= link_to item.name, item_path(item) %></h2>
       <% if item.image %>
-        <%= image_tag item.image, height: "200", width: "200"%>
+        <%= link_to (image_tag item.image), item_path(item) %>
       <% else %>
         <p><em><%="no image available"%></em></p>
       <% end %>
     </div>
     <div class="card-info">
       <p><%= item.description %></p>
-      <p><strong>Credit: <%= item.credit %></strong></p>
+      <h6>Credit <strong><%= item.credit %></strong></h6>
     </div>
   </li>
 </div>

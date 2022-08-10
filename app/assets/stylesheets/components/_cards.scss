@@ -1,14 +1,53 @@
-.card {
+.cards-all-items {
   display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
   list-style-type: none;
+}
+
+.card {
   margin: 20px;
-  transform: scale(1.1);
+  width: 350px;
+  text-align: center;
+  box-shadow: 0.5px 0.5px 1px rgba(81, 81, 81, 0.8);
+  &:hover {
+  transform: scale(1.02);
+  }
+  h3 {
+    padding: 10px;
+    background-color: rgb(48, 48, 48);
+    margin: 0;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    &:hover {
+      color: gray;
+    }
+  }
 }
 
 .card-info {
-  padding: 25px;
+  display: flex;
+  padding: 15px;
+  gap: 15px;
+  background-color: rgba(0, 119, 158, 0.1);
+  h6 {
+    text-align: end;
+  }
+  p {
+    text-align: start;
+    font-size: smaller;
+  }
 }
 
 .card-image {
-  padding: 25px;
+  align-self: center;
+  width: 350px;
+  height: 300px;
+  img {
+    width: 350px;
+    height: 300px;
+    object-fit: cover;
+  }
 }

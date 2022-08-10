@@ -21,7 +21,7 @@ fakeuser3 = User.create!(email: "user3@mail.com", password: "121212", image: "ht
 admin = User.create!(email: "admin@mail.com", password: "121212", image: "https://images.unsplash.com/photo-1540331547168-8b63109225b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1319&q=80", first_name: "ad", last_name: "min", username: "administrator", admin: true, location: "Rome, Italy", credit_left: 3640)
 
 
-puts "User created!"
+puts "Users created!"
 puts "... creating items..."
 
 @items = [
